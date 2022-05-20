@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
+//set PUBLIC_URL=https://pvaldivia1994.github.io/devcard-react/&&npm run build
 function App() {
   return (
     <div className="App">
