@@ -17,6 +17,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://pvaldivia1994.github.io",
   "eslintConfig": {
     "extends": [
       "react-app",
