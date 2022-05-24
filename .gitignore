@@ -4,12 +4,19 @@
 /node_modules
 /.pnp
 .pnp.js
+/WB064RX15
 
 # testing
 /coverage
 
 # production
 /build
+
+/src/styles/*.scss*
+/src/styles/bootstrap
+/src/styles/theme
+/src/styles/config.codekit3*
+/src/db/*.json*
 
 # misc
 .DS_Store
