@@ -81,10 +81,10 @@ export const AboutPage = () => {
         </div>
       </section>
       
-      <div class="container"><hr /></div>
+      <div className="container"><hr /></div>
       <Projects />
       
-      <div class="container"><hr /></div>
+      <div className="container"><hr /></div>
       <Blogs />
     </div>
   );

@@ -2,7 +2,6 @@ import React from "react";
 import datos from "../../db/resume.json";
 
 const { tel, mail, page, dir , pdf} = datos.datos;
-console.log(datos);
 
 export const ResumePage = () => {
   return (

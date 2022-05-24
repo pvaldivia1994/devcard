@@ -9,7 +9,6 @@ export const BlogItem = ({ datos }) => {
   const myMomentObject = moment(date, 'MM-DD-YYYY');
   const dateTimeAgo = myMomentObject.fromNow();
 
-  console.log(dateTimeAgo);
   return (
     <div className="col-md-4 mb-5">
       <div className="card blog-post-card">

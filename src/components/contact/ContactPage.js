@@ -49,7 +49,7 @@ export const ContactPage = () => {
             <p>
               Interested in hiring me for your project or just want to say hi?
               You can fill in the contact form below or send me an email to{" "}
-              <a className="text-link" href="mailto:#" target="_blank">
+              <a className="text-link" href="mailto:#" target="_blank" rel="noreferrer">
                 {links.email}
               </a>
             </p>
@@ -58,27 +58,27 @@ export const ContactPage = () => {
             </p>
             <ul className="list-inline mb-0">
               <li className="list-inline-item mb-3">
-                <a className="linkedin" href={links.linkedin} target="_blank">
+                <a className="linkedin" href={links.linkedin} target="_blank" rel="noreferrer">
                   <i className="fab fa-linkedin-in fa-fw fa-lg"></i>
                 </a>
               </li>
               <li className="list-inline-item mb-3">
-                <a className="github" href={links.github} target="_blank">
+                <a className="github" href={links.github} target="_blank" rel="noreferrer">
                   <i className="fab fa-github-alt fa-fw fa-lg"></i>
                 </a>
               </li>
               <li className="list-inline-item">
-                <a className="instagram" href={links.instagram} target="_blank">
+                <a className="instagram" href={links.instagram} target="_blank" rel="noreferrer">
                   <i className="fab fa-instagram fa-fw fa-lg"></i>
                 </a>
               </li>
               <li className="list-inline-item mb-3">
-                <a className="stack-overflow" href={links.stackoverflow} target="_blank">
+                <a className="stack-overflow" href={links.stackoverflow} target="_blank" rel="noreferrer">
                   <i className="fab fa-stack-overflow fa-fw fa-lg"></i>
                 </a>
               </li>
               <li className="list-inline-item mb-3">
-                <a className="codepen" href={links.codepen} target="_blank">
+                <a className="codepen" href={links.codepen} target="_blank" rel="noreferrer">
                   <i className="fab fa-codepen fa-fw fa-lg"></i>
                 </a>
               </li>
