@@ -15,6 +15,7 @@ export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Navbar />
+      console.log(process.env);
       <div className="main-wrapper">
 
         <Routes>
