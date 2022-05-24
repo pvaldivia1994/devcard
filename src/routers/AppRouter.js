@@ -12,18 +12,18 @@ import { Navbar } from "../components/ui/Navbar";
 import "../styles/theme-4.scss";
 
 export const AppRouter = () => {
+  
   return (
     <BrowserRouter>
       <Navbar />
-      console.log(process.env);
       <div className="main-wrapper">
 
         <Routes>
-          <Route path="/portfolio" element={<PortfolioPage />} />
-          <Route path="/resume" element={<ResumePage />} />
-          <Route path="/blog" element={<BlogPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/" element={<AboutPage />} />
+          <Route path={`${process.env.PUBLIC_URL}/portfolio`} element={<PortfolioPage />} />
+          <Route path={`${process.env.PUBLIC_URL}/resume`} element={<ResumePage />} />
+          <Route path={`${process.env.PUBLIC_URL}/blog`} element={<BlogPage />} />
+          <Route path={`${process.env.PUBLIC_URL}/contact`} element={<ContactPage />} />
+          <Route path={`${process.env.PUBLIC_URL}/`} element={<AboutPage />} />
         </Routes>
         <Footer />
       </div>
