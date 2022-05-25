@@ -38,6 +38,19 @@ export const PortfolioPage = () => {
     imagesLoaded();
   });
 
+/*
+
+{
+    "title" : "Vanilla JavaScript",
+    "desc" : " Project intro lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis disparturient montes.",
+    "client" : "Afp Reservas",
+    "image" : "assets/images/project/project-1.jpg",
+    "Url" : "portfolio",
+    "filters" : "webapp"
+}
+
+*/
+
   return (
     <div className="animate__animated animate__fadeIn animate__faster">
       <section className="cta-section theme-bg-light py-5">
@@ -50,7 +63,11 @@ export const PortfolioPage = () => {
               curiosities and difficulties that their development has had.
             </p>
           </div>
-          <NavLink className="btn btn-primary" to={`${process.env.PUBLIC_URL}/contact`} target="_blank">
+          <NavLink
+            className="btn btn-primary"
+            to={`${process.env.PUBLIC_URL}/contact`}
+            target="_blank"
+          >
             <i className="fas fa-paper-plane me-2"></i>Hire Me
           </NavLink>
         </div>
@@ -77,12 +94,15 @@ export const PortfolioPage = () => {
               </li>
             </ul>
           </div>
-
-          <div className="project-cards row isotope">
-            {projects.map((project, index) => (
-              <ProjectItem key={index} datos={project} />
-            ))}
-          </div>
+          {projects.length > 0 ? (
+            <div className="project-cards row isotope">
+              {projects.map((project, index) => (
+                <ProjectItem key={index} datos={project} />
+              ))}
+            </div>
+          ) : (
+            <h2 className="text-center">I will add this section coming soon ...  <br /> <br /> <br /> <br /> <br /> <br /></h2>
+          )}
         </div>
       </section>
     </div>

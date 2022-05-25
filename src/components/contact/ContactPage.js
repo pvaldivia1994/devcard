@@ -109,8 +109,8 @@ export const ContactPage = () => {
                   name="name"
                   placeholder="Name ..."
                   minLength="2"
-                  required="true"
-                  aria-required="true"
+                  required={true}
+                  aria-required={true}
                 />
               </div>
               <div className="col-12 col-md-6">
@@ -124,21 +124,21 @@ export const ContactPage = () => {
                   id="cemail"
                   name="email"
                   placeholder="Email ..."
-                  required="true"
-                  aria-required="true"
+                  required={true}
+                  aria-required={true}
                 />
               </div>
               <div className="col-12">
                 <input
                   autoComplete="false"
                   type="text"
-                  required="true"
+                  required={true}
                   className="form-control"
                   id="csubject"
                   name="subject"
                   placeholder="Subject ..."
                   minLength="2"
-                  aria-required="true"
+                  aria-required={true}
                 />
                 <div className="mt-2">
                   <small className="form-text text-muted pt-1">
@@ -161,8 +161,8 @@ export const ContactPage = () => {
                   name="message"
                   placeholder="Enter your message ..."
                   rows="10"
-                  required="true"
-                  aria-required="true"
+                  required={true}
+                  aria-required={true}
                 ></textarea>
               </div>
               <div className="form-group col-12">

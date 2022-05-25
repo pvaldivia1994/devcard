@@ -12,27 +12,22 @@ import { Page404 } from "../components/ui/Page404";
 
 import "../styles/theme-4.scss";
 import 'animate.css';
+import ScrollToTop from "../helpers/ScrollToTop";
 
 export const AppRouter = () => {
-  console.log(process.env.PUBLIC_URL);
+  
   return (
     <BrowserRouter>
-      <Routes>
-      </Routes>
       <Navbar />
       <div className="main-wrapper">
-
+        <ScrollToTop />
         <Routes>
           <Route path={`${process.env.PUBLIC_URL}/portfolio`} element={<PortfolioPage />} />
           <Route path={`${process.env.PUBLIC_URL}/resume`} element={<ResumePage />} />
           <Route path={`${process.env.PUBLIC_URL}/blog`} element={<BlogPage />} />
           <Route path={`${process.env.PUBLIC_URL}/contact`} element={<ContactPage />} />
           <Route path={`${process.env.PUBLIC_URL}/`} element={<AboutPage />} />
-
-          
           <Route  path="*" element={<Page404 />} />
-          
-
         </Routes>
         <Footer />
       </div>

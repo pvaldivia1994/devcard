@@ -8,12 +8,9 @@ import { Blogs } from "./Blogs";
 
 import SkillsData from "../../db/skills.json";
 
-
 const { skills } = SkillsData;
 
 export const AboutPage = () => {
- 
-
   return (
     <div className="animate__animated animate__fadeIn animate__faster">
       <section className="about-me-section p-3 py-lg-5 px-lg-5 theme-bg-light">
@@ -21,7 +18,9 @@ export const AboutPage = () => {
           <div className="profile-teaser row">
             <div className="col">
               <h2 className="name font-weight-bold mb-1">Pedro Valdivia</h2>
-              <div className="tagline mb-3">Senior Full-Stack / Mobile Developer</div>
+              <div className="tagline mb-3">
+                Senior Full-Stack / Mobile Developer
+              </div>
               <div className="bio mb-4">
                 I am a software developer specialized in frontend and backend
                 development of complex and scalable applications, always try to
@@ -33,11 +32,17 @@ export const AboutPage = () => {
                 <br />
               </div>
               <div className="mb-3">
-                <NavLink className="btn btn-primary me-2 mb-3" to={`${process.env.PUBLIC_URL}/portfolio`} >
+                <NavLink
+                  className="btn btn-primary me-2 mb-3"
+                  to={`${process.env.PUBLIC_URL}/portfolio`}
+                >
                   <i className="fas fa-arrow-alt-circle-right me-2"></i>
                   <span className="d-none d-md-inline">View</span> Portfolio
                 </NavLink>
-                <NavLink className="btn btn-secondary mb-3" to={`${process.env.PUBLIC_URL}/resume`} >
+                <NavLink
+                  className="btn btn-secondary mb-3"
+                  to={`${process.env.PUBLIC_URL}/resume`}
+                >
                   <i className="fas fa-file-alt me-2"></i>
                   <span className="d-none d-md-inline">View</span> Resume
                 </NavLink>
@@ -60,15 +65,21 @@ export const AboutPage = () => {
           <h2 className="section-title font-weight-bold mb-3">What I do</h2>
 
           <div className="section-intro mb-5">
-            I have more than 8 years of experience in creating software for
+            I have more than 8+ years of experience in creating software for
             different clients. Below is a quick overview of my main technical
             skill sets and technologies I use. Want to find out more about my
             experience? Check out my{" "}
-            <NavLink className="text-link" to={`${process.env.PUBLIC_URL}/resume`} >
+            <NavLink
+              className="text-link"
+              to={`${process.env.PUBLIC_URL}/resume`}
+            >
               online resume
             </NavLink>{" "}
             and{" "}
-            <NavLink className="text-link" to={`${process.env.PUBLIC_URL}/portfolio`} >
+            <NavLink
+              className="text-link"
+              to={`${process.env.PUBLIC_URL}/portfolio`}
+            >
               project portfolio
             </NavLink>
             .
@@ -81,11 +92,9 @@ export const AboutPage = () => {
           </div>
         </div>
       </section>
-      
-      <div className="container"><hr /></div>
+
       <Projects />
-      
-      <div className="container"><hr /></div>
+
       <Blogs />
     </div>
   );

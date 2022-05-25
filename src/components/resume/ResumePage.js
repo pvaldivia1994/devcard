@@ -4,6 +4,7 @@ import datos from "../../db/resume.json";
 const { tel, mail, page, dir , pdf} = datos.datos;
 
 export const ResumePage = () => {
+  
   return (
     <div className="animate__animated animate__fadeIn animate__faster">
       <section className="cta-section theme-bg-light py-5">

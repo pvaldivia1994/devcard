@@ -99,7 +99,7 @@ export const Navbar = () => {
 
             <ul className="navbar-nav flex-column text-start">
               <li className="nav-item">
-                <NavLink className="nav-link" to={`${process.env.PUBLIC_URL}/`}>
+                <NavLink  className={({isActive}) => "nav-link " + (isActive ? " active": " " )}  to={`${process.env.PUBLIC_URL}/`}>
                   <i className="fas fa-user fa-fw me-2"></i>About Me
                   <span className="sr-only">(current)</span>
                 </NavLink>
@@ -107,7 +107,7 @@ export const Navbar = () => {
 
               <li className="nav-item">
                 <NavLink
-                  className="nav-link"
+                  className={({isActive}) => "nav-link " + (isActive ? " active": " " )} 
                   to={`${process.env.PUBLIC_URL}/portfolio`}
                 >
                   <i className="fas fa-laptop-code fa-fw me-2"></i> Portfolio
@@ -116,7 +116,7 @@ export const Navbar = () => {
 
               <li className="nav-item">
                 <NavLink
-                  className="nav-link"
+                  className={({isActive}) => "nav-link " + (isActive ? " active": " " )} 
                   to={`${process.env.PUBLIC_URL}/resume`}
                 >
                   <i className="fas fa-file-alt fa-fw me-2"></i> Resume
@@ -124,7 +124,7 @@ export const Navbar = () => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  className="nav-link"
+                   className={({isActive}) => "nav-link " + (isActive ? " active": " " )} 
                   to={`${process.env.PUBLIC_URL}/blog`}
                 >
                   <i className="fas fa-blog fa-fw me-2"></i> Blog
@@ -132,8 +132,8 @@ export const Navbar = () => {
               </li>
               <li className="nav-item">
                 <NavLink
-                  className="nav-link"
-                  to={`${process.env.PUBLIC_URL}/resume`}
+                  className={({isActive}) => "nav-link " + (isActive ? " active": " " )} 
+                  to={`${process.env.PUBLIC_URL}/contact`}
                 >
                   <i className="fas fa-envelope-open-text fa-fw me-2"></i>{" "}
                   Contact
@@ -142,13 +142,13 @@ export const Navbar = () => {
             </ul>
 
             <div className="my-2 mt-4">
-              <NavLink
+              <a
                 className="btn btn-primary"
-                to={`${process.env.PUBLIC_URL}/contact`}
+                href={`${process.env.PUBLIC_URL}/contact`}
                 target="_blank"
               >
                 <i className="fas fa-paper-plane me-2"></i>Hire Me
-              </NavLink>
+              </a>
             </div>
 
             <div className="dark-mode-toggle text-center w-100">
