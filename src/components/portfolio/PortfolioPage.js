@@ -39,7 +39,7 @@ export const PortfolioPage = () => {
   });
 
   return (
-    <div>
+    <div className="animate__animated animate__fadeIn animate__faster">
       <section className="cta-section theme-bg-light py-5">
         <div className="container text-center single-col-max-width">
           <h2 className="heading">Portfolio</h2>
@@ -50,7 +50,7 @@ export const PortfolioPage = () => {
               curiosities and difficulties that their development has had.
             </p>
           </div>
-          <NavLink className="btn btn-primary" to="/contact" target="_blank">
+          <NavLink className="btn btn-primary" to={`${process.env.PUBLIC_URL}/contact`} target="_blank">
             <i className="fas fa-paper-plane me-2"></i>Hire Me
           </NavLink>
         </div>

@@ -1,11 +1,35 @@
 import { NavLink } from "react-router-dom";
 import Links from "../../db/links.json";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const { links } = Links;
 
 export const Navbar = () => {
+    
+  const documentBody = document.getElementsByTagName("body")[0];
+  const dMode = JSON.parse(localStorage.getItem("dark-mode")) === true;
+
+  const [darkMode, setDarkMode] = useState( !dMode );
+
+
+  const handleDarkMode = (e) => {
+
+    setDarkMode(!darkMode);
+    localStorage.setItem("dark-mode", darkMode);
+  };
+
+  useEffect(() => {
+
+    if (darkMode) {
+        documentBody.classList.add("dark-mode");
+      } else {
+        documentBody.classList.remove("dark-mode");
+      }
+      
+  }, [darkMode]);
+
+
   return (
     <header className="header text-center">
       <div className="force-overflow">
@@ -35,7 +59,7 @@ export const Navbar = () => {
             <div className="profile-section pt-3 pt-lg-0">
               <img
                 className="profile-image mb-3 rounded-circle mx-auto"
-                src={`assets/images/profile.png`}
+                src={`${process.env.PUBLIC_URL}/assets/images/profile.png`}
                 alt="image"
               />
 
@@ -91,17 +115,26 @@ export const Navbar = () => {
               </li>
 
               <li className="nav-item">
-                <NavLink className="nav-link" to={`${process.env.PUBLIC_URL}/resume`}>
+                <NavLink
+                  className="nav-link"
+                  to={`${process.env.PUBLIC_URL}/resume`}
+                >
                   <i className="fas fa-file-alt fa-fw me-2"></i> Resume
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to={`${process.env.PUBLIC_URL}/blog`}>
+                <NavLink
+                  className="nav-link"
+                  to={`${process.env.PUBLIC_URL}/blog`}
+                >
                   <i className="fas fa-blog fa-fw me-2"></i> Blog
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to={`${process.env.PUBLIC_URL}/resume`}>
+                <NavLink
+                  className="nav-link"
+                  to={`${process.env.PUBLIC_URL}/resume`}
+                >
                   <i className="fas fa-envelope-open-text fa-fw me-2"></i>{" "}
                   Contact
                 </NavLink>
@@ -111,7 +144,7 @@ export const Navbar = () => {
             <div className="my-2 mt-4">
               <NavLink
                 className="btn btn-primary"
-                to="/contact"
+                to={`${process.env.PUBLIC_URL}/contact`}
                 target="_blank"
               >
                 <i className="fas fa-paper-plane me-2"></i>Hire Me
@@ -124,7 +157,13 @@ export const Navbar = () => {
                 <i className="fas fa-adjust me-1"></i>Dark Mode
               </h4>
 
-              <input className="toggle" id="darkmode" type="checkbox" />
+              <input
+                className="toggle"
+                id="darkmode"
+                type="checkbox"
+                checked={darkMode}
+                onChange={handleDarkMode}
+              />
               <label
                 className="toggle-btn mx-auto mb-0"
                 htmlFor="darkmode"

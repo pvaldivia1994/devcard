@@ -8,13 +8,14 @@ import { Blogs } from "./Blogs";
 
 import SkillsData from "../../db/skills.json";
 
+
 const { skills } = SkillsData;
 
 export const AboutPage = () => {
  
 
   return (
-    <div>
+    <div className="animate__animated animate__fadeIn animate__faster">
       <section className="about-me-section p-3 py-lg-5 px-lg-5 theme-bg-light">
         <div className="container">
           <div className="profile-teaser row">
@@ -32,11 +33,11 @@ export const AboutPage = () => {
                 <br />
               </div>
               <div className="mb-3">
-                <NavLink className="btn btn-primary me-2 mb-3" to="/portfolio">
+                <NavLink className="btn btn-primary me-2 mb-3" to={`${process.env.PUBLIC_URL}/portfolio`} >
                   <i className="fas fa-arrow-alt-circle-right me-2"></i>
                   <span className="d-none d-md-inline">View</span> Portfolio
                 </NavLink>
-                <NavLink className="btn btn-secondary mb-3" to="/resume">
+                <NavLink className="btn btn-secondary mb-3" to={`${process.env.PUBLIC_URL}/resume`} >
                   <i className="fas fa-file-alt me-2"></i>
                   <span className="d-none d-md-inline">View</span> Resume
                 </NavLink>
@@ -63,11 +64,11 @@ export const AboutPage = () => {
             different clients. Below is a quick overview of my main technical
             skill sets and technologies I use. Want to find out more about my
             experience? Check out my{" "}
-            <NavLink className="text-link" to="/resume">
+            <NavLink className="text-link" to={`${process.env.PUBLIC_URL}/resume`} >
               online resume
             </NavLink>{" "}
             and{" "}
-            <NavLink className="text-link" to="/portfolio">
+            <NavLink className="text-link" to={`${process.env.PUBLIC_URL}/portfolio`} >
               project portfolio
             </NavLink>
             .

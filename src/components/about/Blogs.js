@@ -20,7 +20,7 @@ export const Blogs = () => {
 		  }
         </div>
         <div className="text-center py-3">
-          <NavLink to="/blog" className="btn btn-primary">
+          <NavLink to={`${process.env.PUBLIC_URL}/blog`} className="btn btn-primary">
             <i className="fas fa-arrow-alt-circle-right me-2"></i>View Blog
           </NavLink>
         </div>

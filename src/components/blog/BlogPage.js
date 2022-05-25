@@ -5,7 +5,7 @@ const { blogs } = BlogsData;
 
 export const BlogPage = () => {
   return (
-    <div>
+    <div className="animate__animated animate__fadeIn animate__faster">
       <section className="cta-section theme-bg-light py-5">
         <div className="container text-center">
           <h2 className="heading">
@@ -18,7 +18,7 @@ export const BlogPage = () => {
           <div className="single-form-max-width pt-3 mx-auto">
             <form className="signup-form row g-2 g-lg-2 align-items-center">
               <div className="col-12 col-md-9">
-                <label className="sr-only" for="semail">
+                <label className="sr-only" htmlFor="semail">
                   Your email
                 </label>
                 <input

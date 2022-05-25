@@ -5,7 +5,7 @@ const { tel, mail, page, dir , pdf} = datos.datos;
 
 export const ResumePage = () => {
   return (
-    <div>
+    <div className="animate__animated animate__fadeIn animate__faster">
       <section className="cta-section theme-bg-light py-5">
         <div className="container text-center single-col-max-width">
           <h2 className="heading mb-3">Online Resume</h2>

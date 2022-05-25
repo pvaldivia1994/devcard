@@ -13,7 +13,7 @@ export const SkillItem = ({sk}) => {
         </div>
         <h3 className="item-title">{title}</h3>
         <div className="item-desc">
-          {desc}
+          { desc.map((ds, index) => <p key={index} className="mb-1">{ds}</p>) }
         </div>
       </div>
     </div>

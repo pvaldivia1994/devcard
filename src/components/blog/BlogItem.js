@@ -20,7 +20,7 @@ export const BlogItem = ({ datos }) => {
         />
         <div className="card-body">
           <h5 className="card-title">
-            <NavLink className="theme-link" to={url}>
+            <NavLink className="theme-link" to={`${process.env.PUBLIC_URL}/${url}`}>
               {title}
             </NavLink>
           </h5>
@@ -28,7 +28,7 @@ export const BlogItem = ({ datos }) => {
             {desc}
           </p>
           <p className="mb-0">
-            <NavLink className="text-link"  to={url}>
+            <NavLink className="text-link" to={`${process.env.PUBLIC_URL}/${url}`}>
               Read more &rarr;
             </NavLink>
           </p>

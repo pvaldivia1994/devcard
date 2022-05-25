@@ -31,9 +31,9 @@ export const ProjectItem = ({ datos }) => {
           </div>
         </div>
         <div className="link-mask">
-          <NavLink className="link-mask-link" to={Url}></NavLink>
+          <NavLink className="link-mask-link" to={`${process.env.PUBLIC_URL}/${Url}`}></NavLink>
           <div className="link-mask-text">
-            <NavLink className="btn btn-secondary" to={Url}>
+            <NavLink className="btn btn-secondary" to={`${process.env.PUBLIC_URL}/${Url}`}>
               <i className="fas fa-eye me-2"></i>View Case Study
             </NavLink>
           </div>

@@ -18,7 +18,7 @@ export const Projects = () => {
           ))}
         </div>
         <div className="text-center py-3">
-          <NavLink to="/portfolio" className="btn btn-primary">
+          <NavLink to={`${process.env.PUBLIC_URL}/portfolio`} className="btn btn-primary">
             <i className="fas fa-arrow-alt-circle-right me-2"></i>View Portfolio
           </NavLink>
         </div>

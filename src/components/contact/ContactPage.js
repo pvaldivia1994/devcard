@@ -41,7 +41,7 @@ export const ContactPage = () => {
   };
 
   return (
-    <div>
+    <div className="animate__animated animate__fadeIn animate__faster">
       <section className="cta-section theme-bg-light py-5">
         <div className="container text-center single-col-max-width">
           <h2 className="heading">Contact</h2>
@@ -144,7 +144,7 @@ export const ContactPage = () => {
                   <small className="form-text text-muted pt-1">
                     <i className="fas fa-info-circle me-2 text-primary"></i>Want
                     Do you want to know more about me? Check the{" "}
-                    <NavLink className="text-link" to="/" target="_blank">
+                    <NavLink className="text-link" to={`${process.env.PUBLIC_URL}/`} target="_blank">
                       main
                     </NavLink>{" "}
                     page.
