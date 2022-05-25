@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import { Routes, Route, BrowserRouter , Navigate} from "react-router-dom";
 import { AboutPage } from "../components/about/AboutPage";
@@ -13,9 +13,17 @@ import { Page404 } from "../components/ui/Page404";
 import "../styles/theme-4.scss";
 import 'animate.css';
 import ScrollToTop from "../helpers/ScrollToTop";
+import ReactGA from 'react-ga';
+
+const TRACKING_ID = "UA-229981826-1"; // OUR_TRACKING_ID
+
+ReactGA.initialize(TRACKING_ID);
 
 export const AppRouter = () => {
-  
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <BrowserRouter>
       <Navbar />
