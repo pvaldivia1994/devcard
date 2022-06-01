@@ -22,7 +22,7 @@ export const Projects = () => {
             Featured Projects
           </h2>
           <div className="row">
-            {projects.map((project, index) => (
+            {projects.slice(0, 2).map((project, index) => (
               <ProjectItem key={index} datos={project} />
             ))}
           </div>

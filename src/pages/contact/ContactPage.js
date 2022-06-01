@@ -11,7 +11,7 @@ const { links } = Links;
 const { emailkey } = Ekey;
 
 export const ContactPage = () => {
-  
+  document.title = "Pedro Valdivia - Contact";
   const form = useRef();
 
   const [disable, setDisable] = React.useState(false);

@@ -7,6 +7,9 @@ import { ProjectItem } from "./ProjectItem";
 const { projects } = ProjectsData;
 
 export const PortfolioPage = () => {
+
+  document.title = "Pedro Valdivia - Portfolio";
+
   const imagesLoaded = () => {
     const isotopeContainer = document.querySelector(".isotope");
     const filterItems = document.querySelectorAll("#filters .type");
@@ -38,18 +41,6 @@ export const PortfolioPage = () => {
     imagesLoaded();
   });
 
-/*
-
-{
-    "title" : "Vanilla JavaScript",
-    "desc" : " Project intro lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cum sociis natoque penatibus et magnis disparturient montes.",
-    "client" : "Afp Reservas",
-    "image" : "assets/images/project/project-1.jpg",
-    "Url" : "portfolio",
-    "filters" : "webapp"
-}
-
-*/
 
   return (
     <div className="animate__animated animate__fadeIn animate__faster">
@@ -81,7 +72,7 @@ export const PortfolioPage = () => {
                 All
               </li>
               <li className="type  mb-3 mb-lg-0" data-filter=".webapp">
-                We App
+                Web App
               </li>
               <li className="type  mb-3 mb-lg-0" data-filter=".mobileapp">
                 Mobile App

@@ -1,19 +1,22 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 
-import { Routes, Route, BrowserRouter , Navigate} from "react-router-dom";
-import { AboutPage } from "../components/about/AboutPage";
-import { BlogPage } from "../components/blog/BlogPage";
-import { ContactPage } from "../components/contact/ContactPage";
-import { PortfolioPage } from "../components/portfolio/PortfolioPage";
-import { ResumePage } from "../components/resume/ResumePage";
-import Footer from "../components/ui/Footer";
-import { Navbar } from "../components/ui/Navbar";
-import { Page404 } from "../components/ui/Page404";
+import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 
 import "../styles/theme-4.scss";
-import 'animate.css';
+import "animate.css";
 import ScrollToTop from "../helpers/ScrollToTop";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
+
+import {
+  PortfolioPage,
+  ResumePage,
+  BlogPage,
+  ContactPage,
+  AboutPage,
+  Navbar,
+  Footer,
+  ProjectPage,
+} from "../pages";
 
 const TRACKING_ID = "UA-229981826-1"; // OUR_TRACKING_ID
 
@@ -30,16 +33,19 @@ export const AppRouter = () => {
       <div className="main-wrapper">
         <ScrollToTop />
         <Routes>
-          <Route path={`${process.env.PUBLIC_URL}/portfolio`} element={<PortfolioPage />} />
-          <Route path={`${process.env.PUBLIC_URL}/resume`} element={<ResumePage />} />
-          <Route path={`${process.env.PUBLIC_URL}/blog`} element={<BlogPage />} />
-          <Route path={`${process.env.PUBLIC_URL}/contact`} element={<ContactPage />} />
-          <Route path={`${process.env.PUBLIC_URL}/`} element={<AboutPage />} />
-          <Route  path="*" element={<Page404 />} />
+          <Route path={"portfolio"} element={<PortfolioPage />}></Route>
+          <Route path="/portfolio/:pageId" element={<ProjectPage />} />
+          <Route path={"resume"} element={<ResumePage />} />
+          <Route path={"blog"} element={<BlogPage />} />
+          <Route path={"contact"} element={<ContactPage />} />
+          <Route path={"/"} element={<AboutPage />} />
+          <Route
+            path="*"
+            element={<Navigate to={"/"} replace />}
+          />
         </Routes>
         <Footer />
       </div>
-      
     </BrowserRouter>
   );
 };

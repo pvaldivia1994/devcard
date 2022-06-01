@@ -1,30 +1,28 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export const ProjectItem = ({datos}) => {
- 
-  const  {title, desc, client, image, Url} = datos;
-  
+export const ProjectItem = ({ datos }) => {
+  const { title, desc, client, image, filters, projectId} = datos;
+
   return (
-    <div className="col-md-6 mb-5">
+    <div className={`isotope-item col-md-6 mb-5 ${filters}`}>
       <div className="card project-card">
-        <div className="row no-gutters">
+        <div className="row">
           <div className="col-12 col-xl-5 card-img-holder">
             <img
               src={image}
               className="card-img"
-              alt="image"
             />
           </div>
           <div className="col-12 col-xl-7">
             <div className="card-body">
               <h5 className="card-title">
-                <NavLink to={Url} className="theme-link">
+                <a href="project.html" className="theme-link">
                   {title}
-                </NavLink>
+                </a>
               </h5>
               <p className="card-text">
-                {desc}
+               {desc}
               </p>
               <p className="card-text">
                 <small className="text-muted">Client: {client}</small>
@@ -33,9 +31,9 @@ export const ProjectItem = ({datos}) => {
           </div>
         </div>
         <div className="link-mask">
-          <a className="link-mask-link" href="project.html"></a>
+          <NavLink className="link-mask-link" to={`/portfolio/${projectId}`}></NavLink>
           <div className="link-mask-text">
-            <NavLink to={Url} className="btn btn-secondary" href="project.html">
+            <NavLink className="btn btn-secondary" to={`/portfolio/${projectId}`}>
               <i className="fas fa-eye me-2"></i>View Case Study
             </NavLink>
           </div>

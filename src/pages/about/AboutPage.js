@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 import { NavLink } from "react-router-dom";
 import { SkillItem } from "./SkillItem";
@@ -11,6 +11,7 @@ import SkillsData from "../../db/skills.json";
 const { skills } = SkillsData;
 
 export const AboutPage = () => {
+  document.title = "Pedro Valdivia";
   return (
     <div className="animate__animated animate__fadeIn animate__faster">
       <section className="about-me-section p-3 py-lg-5 px-lg-5 theme-bg-light">

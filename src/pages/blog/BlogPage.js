@@ -5,7 +5,7 @@ import { BlogItem } from "./BlogItem";
 const { blogs } = BlogsData;
 
 export const BlogPage = () => {
-
+  document.title = "Pedro Valdivia - Blog";
   /*
   {
       "title" : "Top 3 JavaScript Frameworks",

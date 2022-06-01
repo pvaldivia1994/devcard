@@ -1,0 +1,53 @@
+{
+    "industry":"Finance",
+    "size":"2000+",
+    "url_title":"afpreservas.com",
+    "url":"https://www.afpreservas.com/",
+    "requirements": [
+        "Develop an internal portal for the management of the KPI and BI of the processes.",
+        "The portal must have access by user roles.",
+        "The information must be consulted in real time."
+    ],
+    "project_overview": [
+        "The development of a new web tool was commissioned to check the upload and download status of the different web services used by the company. They liked the first version of the portal so much that it grew until it became one of the most used administrative portals by the different areas, adding different data query tools, graphs, indicators, reports, etc..."
+    ],
+    "the_challenge": [
+        "In addition to the development of incorporating the new architecture structure where the portal was located, I was in charge of it, so I had to learn about server administration.",
+        "After implementing the portal, it was easy to add different modules due to the technology used."
+    ],
+    "the_solution": [
+        "After the corresponding analysis of user requirements, creation of operation diagrams and design of the different views, development began using the following technologies:"
+    ],
+    "technologies": [
+        "React (Frontend)",
+        "NodeJs (Backend)",
+        "Oracle (Data Base)"
+    ],
+    "results": [
+        {
+            "title": "Efficiency",
+            "value": "60%",
+            "note": "up",
+            "desc": "in process control by supervisors."
+        },
+        {
+            "title": "Customer Satisfaction",
+            "value": "99%",
+            "note": "",
+            "desc": "delivered a development with all the requested features and more."
+        },
+        {
+            "title": "Overall Cost",
+            "value": "40%",
+            "note": "down",
+            "desc": "since it was an internal development and not by contract."
+        },
+        {
+            "title": "Datos",
+            "value": "",
+            "note": "",
+            "desc": ""
+        }
+    ],
+    "result_note":"After the portal was implemented, more and more modules were added until it became a robust administrative tool."
+}
