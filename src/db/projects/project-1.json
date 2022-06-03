@@ -1,53 +1,65 @@
 {
-    "industry":"Finance",
-    "size":"2000+",
-    "url_title":"afpreservas.com",
-    "url":"https://www.afpreservas.com/",
+    "industry": "Finance",
+    "size": "+50k users",
+    "urls": [
+        {
+            "url": "https://play.google.com/store/apps/details?id=com.afpreservas.appafpreservas&hl=es_DO&gl=US",
+            "title": "Android"
+        },
+        {
+            "url": "https://apps.apple.com/do/app/afp-reservas/id1488535361",
+            "title": "IOS"
+        }
+    ],
     "requirements": [
-        "Develop an internal portal for the management of the KPI and BI of the processes.",
-        "The portal must have access by user roles.",
-        "The information must be consulted in real time."
+        "Develop a mobile application aimed at the company's customers",
+        "The application must have availability on IOS and Android.",
+        "You must help affiliates to view and edit data related to their account."
     ],
     "project_overview": [
-        "The development of a new web tool was commissioned to check the upload and download status of the different web services used by the company. They liked the first version of the portal so much that it grew until it became one of the most used administrative portals by the different areas, adding different data query tools, graphs, indicators, reports, etc..."
+        "While I was working at the company AFP Reservas I was in charge of developing the client application, this development was very important for the company because currently the country's AFPs (Pension Fund Administrators) did not have mobile applications that would provide information on its affiliates and they had to go to the customer service offices or call the institution for any questions or procedures."
     ],
     "the_challenge": [
-        "In addition to the development of incorporating the new architecture structure where the portal was located, I was in charge of it, so I had to learn about server administration.",
-        "After implementing the portal, it was easy to add different modules due to the technology used."
+        "Developing an app from scratch is already challenging enough, but the background knowledge with previous app development made the job more enjoyable. It was quite a long development to meet all user requests because the application had to have many utilities and options for an attractive launch for the company's affiliates."
     ],
     "the_solution": [
-        "After the corresponding analysis of user requirements, creation of operation diagrams and design of the different views, development began using the following technologies:"
+        "There was a team of 5 people for the development and implementation of it.",
+        "After the corresponding analysis of the user requirements, creation of operation diagrams and design of the different views, the development began using the following technologies:"
     ],
     "technologies": [
-        "React (Frontend)",
-        "NodeJs (Backend)",
+        "Xamarin (Mobile Development)",
+        "Asp. Net. Core  (Api)",
         "Oracle (Data Base)"
+    ],
+    "images": [
+        "../assets/images/project/project-1-img-1.jpg",
+        "../assets/images/project/project-1-img-2.jpg"
     ],
     "results": [
         {
             "title": "Efficiency",
-            "value": "60%",
+            "value": "20%",
             "note": "up",
-            "desc": "in process control by supervisors."
+            "desc": "The customer service and call center departments reduced the number of queries."
         },
         {
             "title": "Customer Satisfaction",
             "value": "99%",
             "note": "",
-            "desc": "delivered a development with all the requested features and more."
+            "desc": "Delivered a development with all the requested features and more."
         },
         {
             "title": "Overall Cost",
-            "value": "40%",
+            "value": "60%",
             "note": "down",
-            "desc": "since it was an internal development and not by contract."
+            "desc": "Since it was an internal development and not by contract."
         },
         {
-            "title": "Datos",
-            "value": "",
-            "note": "",
-            "desc": ""
+            "title": "Store Rating",
+            "value": "4.5",
+            "note": "stars",
+            "desc": "The acceptance of the application by the affiliates was exceptional."
         }
     ],
-    "result_note":"After the portal was implemented, more and more modules were added until it became a robust administrative tool."
+    "result_note": "I am very proud of the result of it, which at the time of writing this post has more than 50 thousand downloads and a score of 4.5 out of 5 in each of the stores."
 }

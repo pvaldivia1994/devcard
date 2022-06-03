@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 
-import "../styles/theme-4.scss";
+import "../styles/theme-7.scss";
 import "animate.css";
 import ScrollToTop from "../helpers/ScrollToTop";
 import ReactGA from "react-ga";
