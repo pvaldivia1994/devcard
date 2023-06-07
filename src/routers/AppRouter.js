@@ -33,15 +33,15 @@ export const AppRouter = () => {
       <div className="main-wrapper">
         <ScrollToTop />
         <Routes>
-          <Route path={"portfolio"} element={<PortfolioPage />}></Route>
-          <Route path="/portfolio/:pageId" element={<ProjectPage />} />
-          <Route path={"resume"} element={<ResumePage />} />
-          <Route path={"blog"} element={<BlogPage />} />
-          <Route path={"contact"} element={<ContactPage />} />
-          <Route path={"/"} element={<AboutPage />} />
+          <Route path={"/devcard/portfolio"} element={<PortfolioPage />}></Route>
+          <Route path="devcard/portfolio/:pageId" element={<ProjectPage />} />
+          <Route path={"/devcard/resume"} element={<ResumePage />} />
+          <Route path={"/devcard/blog"} element={<BlogPage />} />
+          <Route path={"/devcard/contact"} element={<ContactPage />} />
+          <Route path={"/devcard/"} element={<AboutPage />} />
           <Route
             path="*"
-            element={<Navigate to={"/"} replace />}
+            element={<Navigate to={"/devcard/"} replace />}
           />
         </Routes>
         <Footer />
