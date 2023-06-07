@@ -29,6 +29,7 @@ export const Navbar = () => {
       
   }, [darkMode]);
 
+//TODO:  Arreglar la navegacion en celulares
 
   return (
     <header className="header text-center">
