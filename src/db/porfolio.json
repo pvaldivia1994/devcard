@@ -1,0 +1,28 @@
+{
+    "projects": [
+        {
+            "projectId": "project-1",
+            "title": "Xamarin App Mobile",
+            "desc": "Development of the mobile application for AFP reservations clients, for consulting and editing information related to the accounts of affiliates registered in the company.",
+            "client": "Afp Reservas",
+            "image": "assets/images/project/project-1.png",
+            "filters": "mobileapp"
+        },
+        {
+            "projectId": "project-2",
+            "title": "React Portal (BI, KPI)",
+            "desc": "Development of internal administrative web portal for the management of indicators, business intelligence, risk assessment and performance status of the different areas.",
+            "client": "Afp Reservas",
+            "image": "assets/images/project/project-2.jpg",
+            "filters": "webapp frontend backend"
+        },
+        {
+            "projectId": "project-3",
+            "title": "Oracle Forms Build Tool",
+            "desc": "A tool is needed to streamline module development for the company's current Core which is in Oracle Forms 11g.",
+            "client": "Afp Reservas",
+            "image": "assets/images/project/project-4.jpg",
+            "filters": "backend"
+        }
+    ]
+}

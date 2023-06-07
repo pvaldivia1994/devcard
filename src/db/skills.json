@@ -1,0 +1,45 @@
+{ 
+    "skills": 
+    [
+        {
+            "title": "Vanilla JavaScript", 
+            "desc": ["5+ years of experience. TypeScript, Jquery, Datatables, Json, Ajax, Char.js, Anime.js, Apexcharts, Moment.js, Hammer.js , ect..."],
+            "icons": ["fab fa-js-square"]
+        },
+        {
+            "title": "React", 
+            "desc": ["2+ years of experience. Redux, React Ruter, Babel, Hooks, LazyLoad, Animate, SASS, Thunk, Sweetalert, Enzyme, ect... "],
+            "icons": ["fab fa-react me-2", "fab fa-brands fa-sass"]
+        },
+        {
+            "title": "Node", 
+            "desc": ["2+ years of experience. Mongoose, Express, Fileupload, Socket, Rest Api, Handlebars, Colors, Yargs, ect... "],
+            "icons": ["fab fa-node-js me-2", "fab fa-npm"]
+        },
+        {
+            "title": "C#, C++", 
+            "desc": ["8+ years of experience. Xamarin, Asp.Net Core, MVC, Web API, REST, SOAP, Entity Framework, ect... "],
+            "icons": ["fab fa-brands fa-windows me-2"]
+        },
+        {
+            "title": "Data Bases", 
+            "desc": ["Oracle: 6+ years of experience.", "Sql Server: 3+ years of experience.", "MongoDB: 2+ years of experience.", "MySql: 2+ years of experience."],
+            "icons": ["fa fa-solid fa-database"]
+        },
+        {
+            "title": "Java", 
+            "desc": ["5+ years of experience. Android Studio, NetBeans, Java EE, Java Serverless,etc..", "5+  years of experience in Oracle Forms and Reports 11g."],
+            "icons": ["fab fa-brands fa-java"]
+        },
+        {
+            "title": "PHP, Python", 
+            "desc": ["PHP: 2+ years of experience.", "Python: 1+ years of experience. "],
+            "icons": ["fab fa-php me-2", "fab fa-python"]
+        },
+        {
+            "title": "HTML, CSS & Boostrap", 
+            "desc": ["5+ years of experience. "],
+            "icons": ["fab fa-html5 me-2", "fab fa-css3-alt me-2", "fab fa-brands fa-bootstrap"]
+        }
+    ]
+}

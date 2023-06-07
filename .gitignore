@@ -16,8 +16,6 @@
 /src/styles/bootstrap
 /src/styles/theme
 /src/styles/config.codekit3*
-/src/db/*.json*
-/src/db/projects/*.json*
 
 # misc
 .DS_Store

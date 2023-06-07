@@ -1,0 +1,61 @@
+{
+    "industry":"Finance",
+    "size":"2000+",
+    "urls": [
+        {
+            "url": "https://www.afpreservas.com",
+            "title": "afpreservas.com"
+        }
+    ],
+    "requirements": [
+        "Development of an application for the compilation of the screens in Oracle Forms.",
+        "The app needs to run on Windows and I need to run the sh scripts on Linux.",
+        "It must be configurable for the different database environments used by developers."
+    ],
+    "project_overview": [
+        "When implementing the change of environment from Oracle Forms 6 to Oracle Forms 11g Web Logics on Linux, all the developers began to have delays in the development times of the modules requested by the users, because to visualize a change they had to create the in Windows access a Linux server to compile it and then move all the objects to the compiled ones practically increasing the development time x 5. That is why I took the initiative to develop the tool so as not to have to carry out this manual process."
+    ],
+    "the_challenge": [
+        "Before the development of the tool, it was necessary to create several rather complex scripts on the Linux side, which were then executed by the tool via ssh.",
+        "The tool must have the ability to connect with different users to the server and different databases."
+    ],
+    "the_solution": [
+        "After the corresponding analysis of the requirements, the approach that was taken for the development was to develop an application that could transfer the files from Windows to Linux and then execute the compilation commands and move them to their respective directories, this action was carried out simply by clicking in fit.",
+        "Technologies used for development:"
+    ],
+    "technologies": [
+        "WPF C# (Tool Development)",
+        ".sh (Linux Scripts)"
+    ],
+    "images": [
+        "../assets/images/project/project-3-img-1.jpg",
+        "../assets/images/project/project-figure-2.jpg"
+    ],
+    "results": [
+        {
+            "title": "Efficiency",
+            "value": "80%",
+            "note": "up",
+            "desc": "In the development time of the modules."
+        },
+        {
+            "title": "Customer Satisfaction",
+            "value": "99%",
+            "note": "",
+            "desc": "After the implementation of the tool did not use the previous method again."
+        },
+        {
+            "title": "Overall Cost",
+            "value": "80%",
+            "note": "down",
+            "desc": "Since it was an internal development and not by contract."
+        },
+        {
+            "title": "Program Executions",
+            "value": "700k",
+            "note": "",
+            "desc": "Done by the developers to compile the forms."
+        }
+    ],
+    "result_note":"After the portal was implemented, more and more modules were added until it became a robust administrative tool."
+}
