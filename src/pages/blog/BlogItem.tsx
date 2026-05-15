@@ -1,8 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import moment from 'moment';
+import type { BlogPost } from "../../types";
+import { useI18n } from "../../i18n/I18nContext";
 
-export const BlogItem = ({ datos }) => {
+type BlogItemProps = {
+  datos: BlogPost;
+};
+
+export const BlogItem = ({ datos }: BlogItemProps) => {
+  const { t } = useI18n();
 
   const { title, desc, url , image, date} = datos;
 
@@ -29,12 +36,12 @@ export const BlogItem = ({ datos }) => {
           </p>
           <p className="mb-0">
             <NavLink className="text-link" to={`${process.env.PUBLIC_URL}/${url}`}>
-              Read more &rarr;
+              {t("common.readMore")} &rarr;
             </NavLink>
           </p>
         </div>
         <div className="card-footer">
-          <small className="text-muted">Published {dateTimeAgo}</small>
+          <small className="text-muted">{t("blogPage.published")} {dateTimeAgo}</small>
         </div>
       </div>
     </div>

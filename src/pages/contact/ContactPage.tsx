@@ -1,4 +1,5 @@
 import React , {useRef} from "react";
+import type { FormEvent } from "react";
 import { NavLink } from "react-router-dom";
 
 import emailjs from '@emailjs/browser';
@@ -6,35 +7,42 @@ import Swal from 'sweetalert2'
 
 import Links from "../../db/links.json";
 import Ekey from "../../db/emailkey.json";
+import { useI18n } from "../../i18n/I18nContext";
 
 const { links } = Links;
 const { emailkey } = Ekey;
 
 export const ContactPage = () => {
-  document.title = "Pedro Valdivia - Contact";
-  const form = useRef();
+  const { t } = useI18n();
+
+  document.title = `Pedro Valdivia - ${t("common.contact")}`;
+  const form = useRef<HTMLFormElement>(null);
 
   const [disable, setDisable] = React.useState(false);
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setDisable(true);
     
+    if (!form.current) {
+      return;
+    }
+
     emailjs.sendForm(emailkey.USER_ID, emailkey.TEMPLATE_ID, form.current, emailkey.PUBLIC_KEY)
       .then((result) => {
         console.log(result);
         Swal.fire(
-          'Message sent!',
-          'Thank you very much for contacting me. I will be answering your message as soon as possible.',
+          t("contactPage.successTitle"),
+          t("contactPage.successText"),
           'success'
         );
-        e.target.reset();
+        form.current?.reset();
       }, (error) => {
         console.log(error);
         Swal.fire({
-          title: 'Error to Send Message!',
-          text: 'An error occurred while sending the message, please contact me via email : ' + links.email,
+          title: t("contactPage.errorTitle"),
+          text: `${t("contactPage.errorText")} ${links.email}`,
           icon: 'error'
         });
       });
@@ -44,17 +52,16 @@ export const ContactPage = () => {
     <div className="animate__animated animate__fadeIn animate__faster">
       <section className="cta-section theme-bg-light py-5">
         <div className="container text-center single-col-max-width">
-          <h2 className="heading">Contact</h2>
+          <h2 className="heading">{t("contactPage.title")}</h2>
           <div className="intro">
             <p>
-              Interested in hiring me for your project or just want to say hi?
-              You can fill in the contact form below or send me an email to{" "}
+              {t("contactPage.intro")}{" "}
               <a className="text-link" href="mailto:#" target="_blank" rel="noreferrer">
                 {links.email}
               </a>
             </p>
             <p>
-              Want to get connected? Follow me on the social channels below.
+              {t("contactPage.socialIntro")}
             </p>
             <ul className="list-inline mb-0">
               <li className="list-inline-item mb-3">
@@ -95,11 +102,11 @@ export const ContactPage = () => {
             onSubmit={sendEmail}
             action=""
           >
-            <h3 className="text-center mb-3">Get In Touch</h3>
+            <h3 className="text-center mb-3">{t("contactPage.formTitle")}</h3>
             <div className="row g-3">
               <div className="col-12 col-md-6">
                 <label className="sr-only" htmlFor="cname">
-                  Name
+                  {t("contactPage.name")}
                 </label>
                 <input
                   autoComplete="false"
@@ -107,15 +114,15 @@ export const ContactPage = () => {
                   className="form-control"
                   id="cname"
                   name="name"
-                  placeholder="Name ..."
-                  minLength="2"
+                  placeholder={t("contactPage.namePlaceholder")}
+                  minLength={2}
                   required={true}
                   aria-required={true}
                 />
               </div>
               <div className="col-12 col-md-6">
                 <label className="sr-only" htmlFor="cemail">
-                  Email
+                  {t("contactPage.email")}
                 </label>
                 <input
                   autoComplete="false"
@@ -123,7 +130,7 @@ export const ContactPage = () => {
                   className="form-control"
                   id="cemail"
                   name="email"
-                  placeholder="Email ..."
+                  placeholder={t("contactPage.emailPlaceholder")}
                   required={true}
                   aria-required={true}
                 />
@@ -136,31 +143,31 @@ export const ContactPage = () => {
                   className="form-control"
                   id="csubject"
                   name="subject"
-                  placeholder="Subject ..."
-                  minLength="2"
+                  placeholder={t("contactPage.subjectPlaceholder")}
+                  minLength={2}
                   aria-required={true}
                 />
                 <div className="mt-2">
                   <small className="form-text text-muted pt-1">
-                    <i className="fas fa-info-circle me-2 text-primary"></i>Want
-                    Do you want to know more about me? Check the{" "}
+                    <i className="fas fa-info-circle me-2 text-primary"></i>
+                    {t("contactPage.hintBefore")}{" "}
                     <NavLink className="text-link" to={`${process.env.PUBLIC_URL}/`} target="_blank">
-                      main
+                      {t("contactPage.main")}
                     </NavLink>{" "}
-                    page.
+                    {t("contactPage.hintAfter")}
                   </small>
                 </div>
               </div>
               <div className="col-12">
                 <label className="sr-only" htmlFor="cmessage">
-                  Your message
+                  {t("contactPage.message")}
                 </label>
                 <textarea
                   className="form-control"
                   id="cmessage"
                   name="message"
-                  placeholder="Enter your message ..."
-                  rows="10"
+                  placeholder={t("contactPage.messagePlaceholder")}
+                  rows={10}
                   required={true}
                   aria-required={true}
                 ></textarea>
@@ -171,7 +178,7 @@ export const ContactPage = () => {
                   disabled={disable}
                   className="btn btn-block btn-primary py-2"
                 >
-                  Send Now
+                  {t("contactPage.send")}
                 </button>
               </div>
             </div>

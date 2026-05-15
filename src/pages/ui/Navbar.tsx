@@ -2,21 +2,25 @@ import { NavLink } from "react-router-dom";
 import Links from "../../db/links.json";
 
 import React, { useEffect, useState } from "react";
+import { useI18n } from "../../i18n/I18nContext";
 
 const { links } = Links;
 
 export const Navbar = () => {
+  const { t, toggleLanguage } = useI18n();
     
   const documentBody = document.getElementsByTagName("body")[0];
   const dMode = JSON.parse(localStorage.getItem("dark-mode")) === true;
 
   const [darkMode, setDarkMode] = useState( !dMode );
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 
-  const handleDarkMode = (e) => {
+  const handleDarkMode = () => {
 
-    setDarkMode(!darkMode);
-    localStorage.setItem("dark-mode", darkMode);
+    const nextDarkMode = !darkMode;
+    setDarkMode(nextDarkMode);
+    localStorage.setItem("dark-mode", JSON.stringify(nextDarkMode));
   };
 
   useEffect(() => {
@@ -29,7 +33,9 @@ export const Navbar = () => {
       
   }, [darkMode]);
 
-//TODO:  Arreglar la navegacion en celulares
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="header text-center">
@@ -47,16 +53,18 @@ export const Navbar = () => {
           <button
             className="navbar-toggler"
             type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navigation"
             aria-controls="navigation"
-            aria-expanded="false"
+            aria-expanded={isMenuOpen}
             aria-label="Toggle navigation"
+            onClick={() => setIsMenuOpen((current) => !current)}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
 
-          <div id="navigation" className="collapse navbar-collapse flex-column">
+          <div
+            id="navigation"
+            className={`collapse navbar-collapse flex-column ${isMenuOpen ? "show" : ""}`}
+          >
             <div className="profile-section pt-3 pt-lg-0">
               <img
                 className="profile-image mb-3 rounded-circle mx-auto"
@@ -65,8 +73,12 @@ export const Navbar = () => {
               />
 
               <div className="bio mb-3">
-                Hi, my name is Pedro Valdivia <br /> Senior Full-Stack / Mobile
-                Developer. <br /> Welcome to my personal website!
+                {t("nav.bio").split("<br />").map((line, index) => (
+                  <React.Fragment key={line}>
+                    {index > 0 && <br />}
+                    {line}
+                  </React.Fragment>
+                ))}
               </div>
               <ul className="social-list list-inline py-2 mx-auto">
                 <li className="list-inline-item">
@@ -100,9 +112,9 @@ export const Navbar = () => {
 
             <ul className="navbar-nav flex-column text-start">
               <li className="nav-item">
-                <NavLink  className={({isActive}) => "nav-link " + (isActive ? " active": " " )}  to={`${process.env.PUBLIC_URL}/`}>
-                  <i className="fas fa-user fa-fw me-2"></i>About Me
-                  <span className="sr-only">(current)</span>
+                <NavLink onClick={closeMenu} className={({isActive}) => "nav-link " + (isActive ? " active": " " )}  to={`${process.env.PUBLIC_URL}/`}>
+                  <i className="fas fa-user fa-fw me-2"></i>{t("nav.about")}
+                  <span className="sr-only">({t("nav.current")})</span>
                 </NavLink>
               </li>
 
@@ -110,8 +122,9 @@ export const Navbar = () => {
                 <NavLink
                   className={({isActive}) => "nav-link " + (isActive ? " active": " " )} 
                   to={`${process.env.PUBLIC_URL}/portfolio`}
+                  onClick={closeMenu}
                 >
-                  <i className="fas fa-laptop-code fa-fw me-2"></i> Portfolio
+                  <i className="fas fa-laptop-code fa-fw me-2"></i> {t("common.portfolio")}
                 </NavLink>
               </li>
 
@@ -119,25 +132,28 @@ export const Navbar = () => {
                 <NavLink
                   className={({isActive}) => "nav-link " + (isActive ? " active": " " )} 
                   to={`${process.env.PUBLIC_URL}/resume`}
+                  onClick={closeMenu}
                 >
-                  <i className="fas fa-file-alt fa-fw me-2"></i> Resume
+                  <i className="fas fa-file-alt fa-fw me-2"></i> {t("common.resume")}
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink
                    className={({isActive}) => "nav-link " + (isActive ? " active": " " )} 
                   to={`${process.env.PUBLIC_URL}/blog`}
+                  onClick={closeMenu}
                 >
-                  <i className="fas fa-blog fa-fw me-2"></i> Blog
+                  <i className="fas fa-blog fa-fw me-2"></i> {t("common.blog")}
                 </NavLink>
               </li>
               <li className="nav-item">
                 <NavLink
                   className={({isActive}) => "nav-link " + (isActive ? " active": " " )} 
                   to={`${process.env.PUBLIC_URL}/contact`}
+                  onClick={closeMenu}
                 >
                   <i className="fas fa-envelope-open-text fa-fw me-2"></i>{" "}
-                  Contact
+                  {t("common.contact")}
                 </NavLink>
               </li>
             </ul>
@@ -148,14 +164,26 @@ export const Navbar = () => {
                 href={`${process.env.PUBLIC_URL}/contact`}
                 target="_blank"
               >
-                <i className="fas fa-paper-plane me-2"></i>Hire Me
+                <i className="fas fa-paper-plane me-2"></i>{t("common.hireMe")}
               </a>
+            </div>
+
+            <div className="my-2">
+              <button
+                type="button"
+                className="language-toggle"
+                onClick={toggleLanguage}
+                aria-label={t("nav.language")}
+              >
+                <i className="fas fa-language"></i>
+                {t("nav.languageToggle")}
+              </button>
             </div>
 
             <div className="dark-mode-toggle text-center w-100">
               <hr className="mb-4" />
               <h4 className="toggle-name mb-3 ">
-                <i className="fas fa-adjust me-1"></i>Dark Mode
+                <i className="fas fa-adjust me-1"></i>{t("nav.darkMode")}
               </h4>
 
               <input

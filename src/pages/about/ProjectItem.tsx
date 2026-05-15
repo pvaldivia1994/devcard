@@ -1,9 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import type { ProjectSummary } from "../../types";
+import { useI18n } from "../../i18n/I18nContext";
 
-export const ProjectItem = ({datos}) => {
+type ProjectItemProps = {
+  datos: ProjectSummary;
+};
+
+export const ProjectItem = ({datos}: ProjectItemProps) => {
+  const { t } = useI18n();
  
   const  {title, desc, client, image, projectId} = datos;
+  const projectUrl = `${process.env.PUBLIC_URL}/portfolio/${projectId}`;
   
   return (
     <div className="col-md-6 mb-5">
@@ -19,7 +27,7 @@ export const ProjectItem = ({datos}) => {
           <div className="col-12 col-xl-7">
             <div className="card-body">
               <h5 className="card-title">
-                <NavLink to={projectId} className="theme-link">
+                <NavLink to={projectUrl} className="theme-link">
                   {title}
                 </NavLink>
               </h5>
@@ -27,16 +35,16 @@ export const ProjectItem = ({datos}) => {
                 {desc}
               </p>
               <p className="card-text">
-                <small className="text-muted">Client: {client}</small>
+                <small className="text-muted">{t("common.client")}: {client}</small>
               </p>
             </div>
           </div>
         </div>
         <div className="link-mask">
-          <NavLink className="link-mask-link" to={`/portfolio/${projectId}`} />
+          <NavLink className="link-mask-link" to={projectUrl} />
           <div className="link-mask-text">
-            <NavLink to={`/portfolio/${projectId}`} className="btn btn-secondary">
-              <i className="fas fa-eye me-2"></i>View Case Study
+            <NavLink to={projectUrl} className="btn btn-secondary">
+              <i className="fas fa-eye me-2"></i>{t("portfolio.viewCaseStudy")}
             </NavLink>
           </div>
         </div>

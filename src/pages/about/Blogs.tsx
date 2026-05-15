@@ -3,9 +3,12 @@ import { NavLink } from "react-router-dom";
 import { BlogItem } from "./BlogItem";
 
 import BlogsData from "../../db/blogs.json";
+import { useI18n } from "../../i18n/I18nContext";
 const { blogs } = BlogsData;
 
 export const Blogs = () => {
+  const { t } = useI18n();
+
   if(blogs.length === 0) {
     return (<></>);
   }
@@ -18,7 +21,7 @@ export const Blogs = () => {
       <section className="latest-blog-section p-3 py-lg-4 px-lg-5">
         <div className="container">
           <h2 className="section-title font-weight-bold mb-5">
-            Latest Blog Posts
+            {t("about.latestBlogPosts")}
           </h2>
           <div className="row">
             {blogs.map((project, index) => (
@@ -30,7 +33,7 @@ export const Blogs = () => {
               to={`${process.env.PUBLIC_URL}/blog`}
               className="btn btn-primary"
             >
-              <i className="fas fa-arrow-alt-circle-right me-2"></i>View Blog
+              <i className="fas fa-arrow-alt-circle-right me-2"></i>{t("about.viewBlog")}
             </NavLink>
           </div>
         </div>

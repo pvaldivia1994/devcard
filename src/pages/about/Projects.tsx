@@ -3,9 +3,11 @@ import { NavLink } from "react-router-dom";
 import { ProjectItem } from "./ProjectItem";
 
 import ProjectsData from "../../db/porfolio.json";
+import { useI18n } from "../../i18n/I18nContext";
 const { projects } = ProjectsData;
 
 export const Projects = () => {
+  const { t } = useI18n();
 
   if(projects.length === 0){
     return (<></>);
@@ -19,7 +21,7 @@ export const Projects = () => {
       <section className="featured-section p-3 py-lg-4 px-lg-5">
         <div className="container">
           <h2 className="section-title font-weight-bold mb-5">
-            Featured Projects
+            {t("about.featuredProjects")}
           </h2>
           <div className="row">
             {projects.slice(0, 2).map((project, index) => (
@@ -31,8 +33,8 @@ export const Projects = () => {
               to={`${process.env.PUBLIC_URL}/portfolio`}
               className="btn btn-primary"
             >
-              <i className="fas fa-arrow-alt-circle-right me-2"></i>View
-              Portfolio
+              <i className="fas fa-arrow-alt-circle-right me-2"></i>{t("common.view")}{" "}
+              {t("common.portfolio")}
             </NavLink>
           </div>
         </div>

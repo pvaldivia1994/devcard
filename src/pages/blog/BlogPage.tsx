@@ -1,11 +1,15 @@
 import React from "react";
+import type { FormEvent } from "react";
 import Swal from "sweetalert2";
 import BlogsData from "../../db/blogs.json";
 import { BlogItem } from "./BlogItem";
+import { useI18n } from "../../i18n/I18nContext";
 const { blogs } = BlogsData;
 
 export const BlogPage = () => {
-  document.title = "Pedro Valdivia - Blog";
+  const { t } = useI18n();
+
+  document.title = `Pedro Valdivia - ${t("common.blog")}`;
   /*
   {
       "title" : "Top 3 JavaScript Frameworks",
@@ -18,11 +22,11 @@ export const BlogPage = () => {
 
   const [disable, setDisable] = React.useState(false);
 
-  const sendEmail = (e) => {
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     Swal.fire(
-      'Message sent!',
-      'Thank you very much for subscribing to my blog. Soon you will be notified of new publications.',
+      t("blogPage.successTitle"),
+      t("blogPage.successText"),
       'success'
     );
 
@@ -34,17 +38,16 @@ export const BlogPage = () => {
       <section className="cta-section theme-bg-light py-5">
         <div className="container text-center">
           <h2 className="heading">
-            A Blog About Software Development And Life
+            {t("blogPage.title")}
           </h2>
           <div className="intro">
-            Welcome to my blog. Subscribe and get my latest blog post in your
-            inbox.
+            {t("blogPage.intro")}
           </div>
           <div className="single-form-max-width pt-3 mx-auto">
             <form className="signup-form row g-2 g-lg-2 align-items-center" onSubmit={sendEmail}>
               <div className="col-12 col-md-9">
                 <label className="sr-only" htmlFor="semail">
-                  Your email
+                  {t("blogPage.emailLabel")}
                 </label>
                 <input
                   type="email"
@@ -53,12 +56,12 @@ export const BlogPage = () => {
                   name="semail1"
                   disabled={disable}
                   className="form-control me-md-1 semail"
-                  placeholder="Enter email"
+                  placeholder={t("blogPage.emailPlaceholder")}
                 />
               </div>
               <div className="col-12 col-md-2">
                 <button type="submit" className="btn btn-primary" disabled={disable}>
-                  Subscribe
+                  {t("blogPage.subscribe")}
                 </button>
               </div>
             </form>
@@ -75,7 +78,7 @@ export const BlogPage = () => {
               ))}
             </div>
           ) : (
-            <h2 className="text-center">I will add this section coming soon ...  <br /> <br /> <br /> <br /> <br /> <br /></h2>
+            <h2 className="text-center">{t("common.comingSoon")}  <br /> <br /> <br /> <br /> <br /> <br /></h2>
           )}
           </div>
         </div>

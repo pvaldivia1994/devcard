@@ -4,15 +4,21 @@ import { NavLink } from "react-router-dom";
 
 import ProjectsData from "../../db/porfolio.json";
 import { ProjectItem } from "./ProjectItem";
+import { useI18n } from "../../i18n/I18nContext";
 const { projects } = ProjectsData;
 
 export const PortfolioPage = () => {
+  const { t } = useI18n();
 
-  document.title = "Pedro Valdivia - Portfolio";
+  document.title = `Pedro Valdivia - ${t("common.portfolio")}`;
 
   const imagesLoaded = () => {
-    const isotopeContainer = document.querySelector(".isotope");
-    const filterItems = document.querySelectorAll("#filters .type");
+    const isotopeContainer = document.querySelector<HTMLElement>(".isotope");
+    const filterItems = document.querySelectorAll<HTMLElement>("#filters .type");
+
+    if (!isotopeContainer) {
+      return;
+    }
 
     var iso = new isotope(isotopeContainer, {
       // options
@@ -29,7 +35,11 @@ export const PortfolioPage = () => {
         iso.arrange({ filter: filterValue });
 
         //toggle active class
-        for (let siblingFilterItem of filterItem.parentNode.children) {
+        if (!filterItem.parentElement) {
+          return;
+        }
+
+        for (let siblingFilterItem of Array.from(filterItem.parentElement.children)) {
           siblingFilterItem.classList.remove("active");
         }
         filterItem.classList.add("active");
@@ -46,12 +56,10 @@ export const PortfolioPage = () => {
     <div className="animate__animated animate__fadeIn animate__faster">
       <section className="cta-section theme-bg-light py-5">
         <div className="container text-center single-col-max-width">
-          <h2 className="heading">Portfolio</h2>
+          <h2 className="heading">{t("portfolio.title")}</h2>
           <div className="intro">
             <p>
-              Welcome to my online portfolio. On this page you can find some of
-              the projects I have carried out, the languages, frameworks used,
-              curiosities and difficulties that their development has had.
+              {t("portfolio.intro")}
             </p>
           </div>
           <NavLink
@@ -59,7 +67,7 @@ export const PortfolioPage = () => {
             to={`${process.env.PUBLIC_URL}/contact`}
             target="_blank"
           >
-            <i className="fas fa-paper-plane me-2"></i>Hire Me
+            <i className="fas fa-paper-plane me-2"></i>{t("common.hireMe")}
           </NavLink>
         </div>
       </section>
@@ -69,19 +77,19 @@ export const PortfolioPage = () => {
           <div className="text-center">
             <ul id="filters" className="filters mb-5 mx-auto   ps-0">
               <li className="type active mb-3 mb-lg-0" data-filter="*">
-                All
+                {t("portfolio.filters.all")}
               </li>
               <li className="type  mb-3 mb-lg-0" data-filter=".webapp">
-                Web App
+                {t("portfolio.filters.webapp")}
               </li>
               <li className="type  mb-3 mb-lg-0" data-filter=".mobileapp">
-                Mobile App
+                {t("portfolio.filters.mobileapp")}
               </li>
               <li className="type  mb-3 mb-lg-0" data-filter=".frontend">
-                Frontend
+                {t("portfolio.filters.frontend")}
               </li>
               <li className="type  mb-3 mb-lg-0" data-filter=".backend">
-                Backend
+                {t("portfolio.filters.backend")}
               </li>
             </ul>
           </div>
@@ -92,7 +100,7 @@ export const PortfolioPage = () => {
               ))}
             </div>
           ) : (
-            <h2 className="text-center">I will add this section coming soon ...  <br /> <br /> <br /> <br /> <br /> <br /></h2>
+            <h2 className="text-center">{t("common.comingSoon")}  <br /> <br /> <br /> <br /> <br /> <br /></h2>
           )}
         </div>
       </section>

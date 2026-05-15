@@ -1,0 +1,79 @@
+{
+  "common": {
+    "brand": "Pedro Valdivia",
+    "tagline": "Desarrollador Senior Full-Stack / Mobile",
+    "view": "Ver",
+    "portfolio": "Portafolio",
+    "resume": "CV",
+    "blog": "Blog",
+    "contact": "Contacto",
+    "hireMe": "Contrátame",
+    "readMore": "Leer más",
+    "client": "Cliente",
+    "comingSoon": "Agregaré esta sección próximamente ..."
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "current": "actual",
+    "bio": "Hola, mi nombre es Pedro Valdivia<br />Desarrollador Senior Full-Stack / Mobile.<br />Bienvenido a mi sitio personal.",
+    "darkMode": "Modo oscuro",
+    "language": "Idioma",
+    "languageToggle": "English"
+  },
+  "about": {
+    "title": "Pedro Valdivia",
+    "bio": "Soy un desarrollador de software especializado en frontend y backend para aplicaciones complejas y escalables. Siempre intento mantenerme al día con diferentes tecnologías, lenguajes y frameworks.",
+    "bioClosing": "No hay límites para el desarrollo.",
+    "whatIDo": "Qué hago",
+    "introBeforeResume": "Tengo más de 8 años de experiencia creando software para diferentes clientes. Abajo tienes un resumen de mis principales habilidades técnicas y tecnologías. ¿Quieres conocer más sobre mi experiencia? Revisa mi",
+    "onlineResume": "CV online",
+    "introBetweenLinks": "y mi",
+    "projectPortfolio": "portafolio de proyectos",
+    "featuredProjects": "Proyectos destacados",
+    "latestBlogPosts": "Últimos posts",
+    "viewBlog": "Ver blog"
+  },
+  "portfolio": {
+    "title": "Portafolio",
+    "intro": "Bienvenido a mi portafolio online. En esta página puedes encontrar algunos de los proyectos que he realizado, los lenguajes y frameworks utilizados, curiosidades y dificultades que surgieron durante su desarrollo.",
+    "filters": {
+      "all": "Todos",
+      "webapp": "Web App",
+      "mobileapp": "Mobile App",
+      "frontend": "Frontend",
+      "backend": "Backend"
+    },
+    "viewCaseStudy": "Ver caso de estudio"
+  },
+  "blogPage": {
+    "title": "Un blog sobre desarrollo de software y vida",
+    "intro": "Bienvenido a mi blog. Suscríbete y recibe mis publicaciones más recientes en tu correo.",
+    "emailLabel": "Tu correo",
+    "emailPlaceholder": "Ingresa tu correo",
+    "subscribe": "Suscribirme",
+    "successTitle": "Mensaje enviado",
+    "successText": "Muchas gracias por suscribirte a mi blog. Pronto recibirás notificaciones sobre nuevas publicaciones.",
+    "published": "Publicado"
+  },
+  "contactPage": {
+    "title": "Contacto",
+    "intro": "¿Te interesa contratarme para tu proyecto o solo quieres saludar? Puedes llenar el formulario de contacto o enviarme un correo a",
+    "socialIntro": "¿Quieres conectar? Sígueme en los siguientes canales.",
+    "formTitle": "Ponte en contacto",
+    "name": "Nombre",
+    "namePlaceholder": "Nombre ...",
+    "email": "Correo",
+    "emailPlaceholder": "Correo ...",
+    "subjectPlaceholder": "Asunto ...",
+    "hintBefore": "¿Quieres saber más sobre mí? Revisa la página",
+    "main": "principal",
+    "hintAfter": ".",
+    "message": "Tu mensaje",
+    "messagePlaceholder": "Escribe tu mensaje ...",
+    "send": "Enviar",
+    "successTitle": "Mensaje enviado",
+    "successText": "Muchas gracias por contactarme. Responderé tu mensaje lo antes posible.",
+    "errorTitle": "Error al enviar el mensaje",
+    "errorText": "Ocurrió un error al enviar el mensaje, por favor contáctame por email:"
+  }
+}

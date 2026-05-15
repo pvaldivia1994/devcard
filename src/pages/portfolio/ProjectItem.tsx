@@ -1,7 +1,14 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import type { ProjectSummary } from "../../types";
+import { useI18n } from "../../i18n/I18nContext";
 
-export const ProjectItem = ({ datos }) => {
+type ProjectItemProps = {
+  datos: ProjectSummary;
+};
+
+export const ProjectItem = ({ datos }: ProjectItemProps) => {
+  const { t } = useI18n();
   const { title, desc, client, image, filters, projectId} = datos;
 
   return (
@@ -25,7 +32,7 @@ export const ProjectItem = ({ datos }) => {
                {desc}
               </p>
               <p className="card-text">
-                <small className="text-muted">Client: {client}</small>
+                <small className="text-muted">{t("common.client")}: {client}</small>
               </p>
             </div>
           </div>
@@ -34,7 +41,7 @@ export const ProjectItem = ({ datos }) => {
           <NavLink className="link-mask-link" to={`/devcard/portfolio/${projectId}`}></NavLink>
           <div className="link-mask-text">
             <NavLink className="btn btn-secondary" to={`/devcard/portfolio/${projectId}`}>
-              <i className="fas fa-eye me-2"></i>View Case Study
+              <i className="fas fa-eye me-2"></i>{t("portfolio.viewCaseStudy")}
             </NavLink>
           </div>
         </div>

@@ -1,6 +1,11 @@
 import React from "react";
+import type { Skill } from "../../types";
 
-export const SkillItem = ({sk}) => {
+type SkillItemProps = {
+  sk: Skill;
+};
+
+export const SkillItem = ({sk}: SkillItemProps) => {
 
   const {title, desc, icons} = sk;
   

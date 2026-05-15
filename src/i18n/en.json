@@ -1,0 +1,79 @@
+{
+  "common": {
+    "brand": "Pedro Valdivia",
+    "tagline": "Senior Full-Stack / Mobile Developer",
+    "view": "View",
+    "portfolio": "Portfolio",
+    "resume": "Resume",
+    "blog": "Blog",
+    "contact": "Contact",
+    "hireMe": "Hire Me",
+    "readMore": "Read more",
+    "client": "Client",
+    "comingSoon": "I will add this section coming soon ..."
+  },
+  "nav": {
+    "about": "About Me",
+    "current": "current",
+    "bio": "Hi, my name is Pedro Valdivia<br />Senior Full-Stack / Mobile Developer.<br />Welcome to my personal website!",
+    "darkMode": "Dark Mode",
+    "language": "Language",
+    "languageToggle": "Español"
+  },
+  "about": {
+    "title": "Pedro Valdivia",
+    "bio": "I am a software developer specialized in frontend and backend development of complex and scalable applications, always try to stay ahead with the different technologies, languages and frameworks.",
+    "bioClosing": "There are no limits to development.",
+    "whatIDo": "What I do",
+    "introBeforeResume": "I have more than 8+ years of experience in creating software for different clients. Below is a quick overview of my main technical skill sets and technologies I use. Want to find out more about my experience? Check out my",
+    "onlineResume": "online resume",
+    "introBetweenLinks": "and",
+    "projectPortfolio": "project portfolio",
+    "featuredProjects": "Featured Projects",
+    "latestBlogPosts": "Latest Blog Posts",
+    "viewBlog": "View Blog"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "intro": "Welcome to my online portfolio. On this page you can find some of the projects I have carried out, the languages, frameworks used, curiosities and difficulties that their development has had.",
+    "filters": {
+      "all": "All",
+      "webapp": "Web App",
+      "mobileapp": "Mobile App",
+      "frontend": "Frontend",
+      "backend": "Backend"
+    },
+    "viewCaseStudy": "View Case Study"
+  },
+  "blogPage": {
+    "title": "A Blog About Software Development And Life",
+    "intro": "Welcome to my blog. Subscribe and get my latest blog post in your inbox.",
+    "emailLabel": "Your email",
+    "emailPlaceholder": "Enter email",
+    "subscribe": "Subscribe",
+    "successTitle": "Message sent!",
+    "successText": "Thank you very much for subscribing to my blog. Soon you will be notified of new publications.",
+    "published": "Published"
+  },
+  "contactPage": {
+    "title": "Contact",
+    "intro": "Interested in hiring me for your project or just want to say hi? You can fill in the contact form below or send me an email to",
+    "socialIntro": "Want to get connected? Follow me on the social channels below.",
+    "formTitle": "Get In Touch",
+    "name": "Name",
+    "namePlaceholder": "Name ...",
+    "email": "Email",
+    "emailPlaceholder": "Email ...",
+    "subjectPlaceholder": "Subject ...",
+    "hintBefore": "Do you want to know more about me? Check the",
+    "main": "main",
+    "hintAfter": "page.",
+    "message": "Your message",
+    "messagePlaceholder": "Enter your message ...",
+    "send": "Send Now",
+    "successTitle": "Message sent!",
+    "successText": "Thank you very much for contacting me. I will be answering your message as soon as possible.",
+    "errorTitle": "Error to Send Message!",
+    "errorText": "An error occurred while sending the message, please contact me via email:"
+  }
+}

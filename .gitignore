@@ -13,6 +13,7 @@
 /build
 
 /src/styles/*.scss*
+!/src/styles/theme-7.scss
 /src/styles/bootstrap
 /src/styles/theme
 /src/styles/config.codekit3*
